@@ -1,0 +1,210 @@
+.auth-wrapper,
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  padding: 2rem 1rem;
+  background-color: var(--auth-bg);
+  transition: background-color 0.3s ease;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--auth-card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  padding: 2.25rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.auth-card h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.auth-header h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.auth-header p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.auth-form,
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.input-group,
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+}
+
+.input-group label,
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.input-group input,
+.form-group input {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--input-text);
+  background-color: var(--input-bg);
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.3s;
+  outline: none;
+}
+
+.input-group input:focus,
+.form-group input:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(255, 42, 75, 0.25);
+}
+
+[data-theme="dark"] .input-group input:focus,
+[data-theme="dark"] .form-group input:focus,
+:root:not([data-theme="light"]) .input-group input:focus,
+:root:not([data-theme="light"]) .form-group input:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(255, 42, 75, 0.3);
+}
+
+.password-container {
+  position: relative; /* This is required for the absolute positioning to work */
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 2.5rem; 
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%); /* Centers the icon perfectly vertically */
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 1.2rem;
+  z-index: 10; /* Forces the icon to render on top of the input field */
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: var(--brand-primary);
+}
+
+.password-toggle:focus {
+  outline: none;
+}
+
+.auth-btn {
+  margin-top: 0.5rem;
+  padding: 0.85rem;
+  background: var(--brand-gradient);
+  color: var(--button-text, #ffffff);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.2s ease, transform 0.1s ease, filter 0.2s ease;
+}
+
+.auth-btn:hover {
+  filter: brightness(1.1);
+}
+
+.auth-btn:active {
+  transform: scale(0.98);
+}
+
+.danger-btn-outline {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: transparent;
+  color: var(--brand-accent);
+  border: 1px solid var(--brand-accent);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.danger-btn-outline:hover {
+  background-color: var(--brand-accent);
+  color: #ffffff;
+}
+
+.auth-footer {
+  margin-top: 1.75rem;
+  text-align: center;
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.25rem;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.auth-footer a,
+.auth-link {
+  color: var(--brand-primary);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 0.35rem;
+  transition: color 0.2s ease;
+}
+
+.auth-footer a:hover,
+.auth-link:hover {
+  color: var(--brand-primary-hover);
+  text-decoration: underline;
+}

@@ -1,0 +1,421 @@
+.sports-page {
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  padding-top: 6.5rem; /* Offset for absolute navbar */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==========================================================================
+   Hero Section (Inspired by VYRON Services Header)
+   ========================================================================== */
+.sports-hero {
+  padding: 3rem 5% 2.5rem 5%;
+  text-align: center;
+  position: relative;
+}
+
+.sports-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sports-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--theme-toggle-bg);
+  color: var(--brand-primary);
+  border: 1px solid var(--border-light);
+  padding: 0.35rem 0.95rem;
+  border-radius: 4px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.sports-mega-title {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: clamp(3.2rem, 8vw, 6.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  margin: 0 0 1rem 0;
+  color: var(--brand-primary);
+  text-shadow: 0 0 30px rgba(255, 42, 75, 0.2);
+}
+
+.sports-sub-title {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  margin: 0 0 1.25rem 0;
+}
+
+.sports-hero p {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0 auto 2.5rem auto;
+  max-width: 740px;
+}
+
+/* ==========================================================================
+   Filter Bar
+   ========================================================================== */
+.sports-filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.filter-btn {
+  padding: 0.55rem 1.3rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-card);
+  color: var(--text-secondary);
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--brand-primary);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: var(--brand-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(255, 42, 75, 0.35);
+}
+
+/* ==========================================================================
+   Sports Grid
+   ========================================================================== */
+.sports-grid-section {
+  padding: 2rem 5% 5rem 5%;
+}
+
+.sports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .sports-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Card Styling (Brutalist / Athletic Design)
+   ========================================================================== */
+.sport-card {
+  background-color: var(--bg-card);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.sport-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--brand-primary);
+  box-shadow: 0 16px 36px -6px rgba(255, 42, 75, 0.22);
+}
+
+.sport-card-image-wrap {
+  position: relative;
+  height: 240px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.sport-card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sport-card:hover .sport-card-image-wrap img {
+  transform: scale(1.06);
+}
+
+.sport-card-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 7, 9, 0.85) 0%, rgba(7, 7, 9, 0.15) 50%, transparent 100%);
+}
+
+.sport-card-top-tags {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.sport-tech-index {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(7, 7, 9, 0.78);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 42, 75, 0.6);
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 42, 75, 0.7);
+}
+
+.sport-tag-pill {
+  background: rgba(7, 7, 9, 0.75);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Card Body */
+.sport-card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sport-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.sport-icon {
+  font-size: 1.5rem;
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sport-card-header h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.sport-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0 0 1.25rem 0;
+  flex: 1;
+}
+
+/* Highlights Chips */
+.sport-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+}
+
+.highlight-chip {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* Meta Row */
+.sport-meta-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding: 0.9rem 0;
+  margin-bottom: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.meta-label {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.meta-value {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Enroll Button */
+.sport-enroll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--brand-gradient);
+  color: #ffffff;
+  padding: 0.8rem 1.25rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(255, 42, 75, 0.25);
+  transition: all 0.2s ease;
+}
+
+.sport-enroll-btn:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 42, 75, 0.4);
+}
+
+.enroll-arrow {
+  transition: transform 0.2s ease;
+}
+
+.sport-enroll-btn:hover .enroll-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Bottom CTA Banner
+   ========================================================================== */
+.sports-cta-banner {
+  padding: 4.5rem 5%;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.sports-cta-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.sports-cta-content h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+}
+
+.sports-cta-content p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0 auto 2rem auto;
+}
+
+.sports-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.cta-primary-btn {
+  background: var(--brand-primary);
+  color: #ffffff;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(255, 42, 75, 0.35);
+  transition: all 0.2s ease;
+}
+
+.cta-primary-btn:hover {
+  background: var(--brand-primary-hover, #ff4d6d);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 42, 75, 0.5);
+}
+
+.cta-secondary-btn {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-light);
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.cta-secondary-btn:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+  transform: translateY(-2px);
+}
